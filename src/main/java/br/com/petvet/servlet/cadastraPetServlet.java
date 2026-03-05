@@ -10,4 +10,15 @@ import java.io.IOException;
 @WebServlet
 public class cadastraPetServlet {
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String petName = request.getParameter("pet-name");
+
+        System.out.println(petName);
+
+        request.getRequestDispatcher("index.html").forward(request, response);
+
+    }
+
 }
